@@ -14,9 +14,9 @@ jobs:
       issues: write
     steps:
       - name: Check if user is in team
-        id: check_team
+        id: check_team 
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           USER: ${{ github.event.comment.user.login }}
         run: |
           is_member=$(gh api \
