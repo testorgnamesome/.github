@@ -17,7 +17,7 @@ jobs:
         id: check_team
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           USER: ${{ github.event.comment.user.login }}
         run: |
           is_member=$(gh api \
