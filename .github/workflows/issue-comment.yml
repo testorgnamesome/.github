@@ -34,7 +34,7 @@ jobs:
         run: |
           gh issue comment "$NUMBER" --body  "@${{ github.event.comment.user.login }} $BODY"
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_workflow_orf }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
           BODY: >
