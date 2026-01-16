@@ -16,7 +16,7 @@ jobs:
       - name: Check if user is in team
         id: check_team 
         env:
-          GH_TOKEN: ${{ secrets.PAT_workflow }}
+          GH_TOKEN: ${{ secrets.PAT_workflow_orf }}
           USER: ${{ github.event.comment.user.login }}
         run: |
           is_member=$(gh api \
