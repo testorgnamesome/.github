@@ -16,8 +16,9 @@ jobs:
       - name: Check if user is in team
         id: check_team
         env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
+ #         GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
+ #         GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
           USER: ${{ github.event.comment.user.login }}
         run: |
           is_member=$(gh api \
