@@ -3,9 +3,6 @@ run-name: Reply to internal issue comment by ${{ github.actor }}
 on:
   workflow_call:
 
-env:
-  GH_TOKEN: ${{ github.token }}
-  USER: ${{ github.event.comment.user.login }}
 jobs:
   comment-nocontribution:
     runs-on: ubuntu-latest
@@ -18,6 +15,9 @@ jobs:
     steps:
       - name: Check if user is in team
         id: check_team 
+        env:
+          GH_TOKEN: ${{ secrets.PAT_workflow }}
+          USER: ${{ github.event.comment.user.login }}
         run: |
           is_member=$(gh api \
             -H "Accept: application/vnd.github+json" \
