@@ -37,6 +37,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_REPO: ${{ github.repository }}
           NUMBER: ${{ github.event.issue.number }}
+          USER: ${{ github.event.comment.user.login }}
           BODY: >
             Thank you for reaching out! Unfortunately, this issue is not suitable for open source 
             contribution and so hasn't been marked with "good first issue" or "contributions welcome".
